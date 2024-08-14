@@ -345,8 +345,11 @@ class _SignInPageState extends State<SignInPage> {
         _phoneNumberController.text,
         _passWordController.text,
         _countryController.text);
-    ScaffoldMessenger.of(context)
-        .showSnackBar(const SnackBar(content: Text('User Info Saved')));
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('User Info Saved'),
+      ),
+    );
   }
 
   final ImagePicker _picker = ImagePicker();
@@ -606,17 +609,19 @@ class _SignInPageState extends State<SignInPage> {
                     color: isDarkMode ? Colors.white : Colors.black,
                   ),
                   decoration: InputDecoration(
-                      labelStyle: TextStyle(
+                    labelStyle: TextStyle(
+                      color: isDarkMode ? Colors.white : Colors.black,
+                    ),
+                    labelText: 'Country',
+                    hintText: 'Enter Country ',
+                    hintStyle: TextStyle(
                         color: isDarkMode ? Colors.white : Colors.black,
-                      ),
-                      labelText: 'Country',
-                      hintText: 'Enter Country ',
-                      hintStyle: TextStyle(
-                          color: isDarkMode ? Colors.white : Colors.black,
-                          fontWeight: FontWeight.w200),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      )),
+                        fontWeight: FontWeight.w200),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  textCapitalization: TextCapitalization.words,
                   autocorrect: true,
                   enableSuggestions: true,
 
